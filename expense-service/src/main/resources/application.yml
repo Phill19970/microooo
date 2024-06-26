@@ -1,9 +1,15 @@
 spring:
-  config:
-    import: configserver:http://config-server:8888
-
   application:
     name: expense-service
 
-    jpa:
-      open-in-view: false
+  cloud:
+    config:
+      uri: http://config-server:8888
+
+server:
+  port: 8084
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://registry-service:8761/eureka/

@@ -2,8 +2,14 @@ spring:
   application:
     name: notification-service
 
-  config:
-    import: configserver:http://config-server:8888
+  cloud:
+    config:
+      uri: http://config-server:8888
 
-    jpa:
-      open-in-view: false
+server:
+  port: 8085
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://registry-service:8761/eureka/

@@ -1,11 +1,15 @@
 spring:
-  profiles:
-    active: default
-  config:
-    import: configserver:http://config-server:8888
-
   application:
     name: appointment-service
 
-    jpa:
-      open-in-view: false
+  cloud:
+    config:
+      uri: http://config-server:8888
+
+server:
+  port: 8082
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://registry-service:8761/eureka/

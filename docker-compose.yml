@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3'
 
 services:
   rabbit:
@@ -61,6 +61,11 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8888:8888"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8888/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   registry-service:
     build:
@@ -68,6 +73,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8761:8761"
+    depends_on:
+      config-server:
+        condition: service_healthy
 
   user:
     build:
@@ -76,9 +84,12 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - config-server
-      - registry-service
-      - user-db
+      config-server:
+        condition: service_healthy
+      registry-service:
+        condition: service_started
+      user-db:
+        condition: service_started
 
   medical-record:
     build:
@@ -87,9 +98,12 @@ services:
     ports:
       - "8082:8082"
     depends_on:
-      - config-server
-      - registry-service
-      - medical-record-db
+      config-server:
+        condition: service_healthy
+      registry-service:
+        condition: service_started
+      medical-record-db:
+        condition: service_started
 
   appointment:
     build:
@@ -98,9 +112,12 @@ services:
     ports:
       - "8083:8083"
     depends_on:
-      - config-server
-      - registry-service
-      - appointment-db
+      config-server:
+        condition: service_healthy
+      registry-service:
+        condition: service_started
+      appointment-db:
+        condition: service_started
 
   expense:
     build:
@@ -109,9 +126,12 @@ services:
     ports:
       - "8084:8084"
     depends_on:
-      - config-server
-      - registry-service
-      - expense-db
+      config-server:
+        condition: service_healthy
+      registry-service:
+        condition: service_started
+      expense-db:
+        condition: service_started
 
   api-gateway:
     build:
@@ -120,8 +140,10 @@ services:
     ports:
       - "9000:9000"
     depends_on:
-      - config-server
-      - registry-service
+      config-server:
+        condition: service_healthy
+      registry-service:
+        condition: service_started
 
   notification-service:
     build:
@@ -133,8 +155,10 @@ services:
     ports:
       - "8085:8085"
     depends_on:
-      - config-server
-      - registry-service
+      config-server:
+        condition: service_healthy
+      registry-service:
+        condition: service_started
 
 volumes:
   user_data:
