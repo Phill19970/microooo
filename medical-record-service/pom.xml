@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.capstone</groupId>
-	<artifactId>expense-service</artifactId>
+	<artifactId>medical-record-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>expense-service</name>
+	<name>medical-record-service</name>
 	<description>Capstone Project for Hospital Management System</description>
 	<properties>
 		<java.version>17</java.version>

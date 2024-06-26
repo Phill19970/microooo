@@ -238,8 +238,8 @@ services:
       retries: 4
 
     environment:
-      EMAIL: kharief4u@gmail.com
-      PASSWORD: hllhkezkynqjxvro
+      EMAIL: kharief644@gmail.com
+      PASSWORD: marson6277
 
     ports:
       - "8085:8085"

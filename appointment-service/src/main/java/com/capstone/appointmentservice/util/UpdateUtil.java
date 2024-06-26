@@ -1,7 +1,6 @@
-package com.capstone.expenseservice.util;
+package com.capstone.appointmentservice.util;
 
 import java.util.function.Consumer;
-
 
 public class UpdateUtil {
 
