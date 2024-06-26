@@ -4,3 +4,6 @@ spring:
 
   application:
     name: medical-record-service
+
+    jpa:
+      open-in-view: false

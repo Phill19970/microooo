@@ -6,6 +6,9 @@ spring:
   profiles:
     active: native
 
+    jpa:
+      open-in-view: false
+
   cloud:
     config:
       server:

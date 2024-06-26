@@ -5,3 +5,6 @@ eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
+
+    jpa:
+      open-in-view: false
