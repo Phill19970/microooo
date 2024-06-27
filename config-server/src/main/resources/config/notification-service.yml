@@ -9,6 +9,11 @@ eureka:
       defaultZone: http://registry-service:8761/eureka/
 
 
+  config:
+    import: optional:configserver:http://capstone-config-server:8888
+
+
+
 
 spring:
   rabbitmq:

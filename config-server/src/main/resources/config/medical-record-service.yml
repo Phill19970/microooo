@@ -11,9 +11,13 @@ eureka:
 
 okta:
   oauth2:
-    issuer: https://dev-21108441.okta.com/oauth2/default
-    clientId: 0oaaoqvokauMiS7dW5d7
-    clientSecret: eM3xqDXzvlMeYQauObPtF0cqy_tabiGR3DcKOorMzweFiridO3r4GNsFNopoQUzi
+    issuer: https://dev-69097809.okta.com/oauth2/default
+    clientId: 0oahzn5rzss401QqG5d7
+    clientSecret: yteZu5tt6dn7GPcdXDmKg3_NtbRH3nroqepSxf9RaYxolcbz0UDhP3dc-B49gvTq
+
+  config:
+    import: optional:configserver:http://capstone-config-server:8888
+
 
 spring:
   datasource:

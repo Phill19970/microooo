@@ -21,10 +21,10 @@ projects=(
     "notification-service"
 )
 
-# Get the current directory
+
 current_dir=$(pwd)
 
-# Loop through the projects and build each one
+
 for project in "${projects[@]}"; do
     build_maven_project "$current_dir/$project"
 done

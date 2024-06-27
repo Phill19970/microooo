@@ -2,9 +2,9 @@ spring:
   application:
     name: notification-service
 
-  cloud:
-    config:
-      uri: http://config-server:8888
+
+  config:
+    import: optional:configserver:http://capstone-config-server:8888
 
 server:
   port: 8085

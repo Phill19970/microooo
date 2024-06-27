@@ -1,5 +1,8 @@
 FROM openjdk:17-alpine
 
+# Install curl
+RUN apk add --no-cache curl
+
 ARG JAR_APP=target/*.jar
 
 WORKDIR /app
