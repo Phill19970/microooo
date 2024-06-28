@@ -16,7 +16,7 @@ okta:
     clientSecret: yteZu5tt6dn7GPcdXDmKg3_NtbRH3nroqepSxf9RaYxolcbz0UDhP3dc-B49gvTq
 
   config:
-    import: optional:configserver:http://capstone-config-server:8888
+    uri: http://config-server:8888
 
 
 spring:

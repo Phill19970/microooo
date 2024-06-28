@@ -6,8 +6,6 @@ spring:
     active: native
 
 
-  config:
-    import: optional:configserver:http://capstone-config-server:8888
 
   cloud:
     config:

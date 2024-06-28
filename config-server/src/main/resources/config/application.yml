@@ -5,8 +5,7 @@ eureka:
   instance:
     prefer-ip-address: true
 
-  config:
-    import: optional:configserver:http://capstone-config-server:8888
+
 
 spring:
   datasource:

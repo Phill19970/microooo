@@ -17,7 +17,7 @@ okta:
 
 
   config:
-    import: optional:configserver:http://capstone-config-server:8888
+    uri: http://config-server:8888
 
 spring:
   datasource:

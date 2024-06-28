@@ -4,7 +4,7 @@ spring:
 
 
   config:
-    import: optional:configserver:http://capstone-config-server:8888
+    uri: http://config-server:8888
 
 server:
   port: 8085
